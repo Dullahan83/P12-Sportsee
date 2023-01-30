@@ -51,27 +51,9 @@ section{
     display:flex;
     margin-top: 28px;
     column-gap: 30px;
+    width: 100%;
 }
-.legend{
-    display: flex;
-    justify-content: space-between;
-    h4{
-        font-size: 15px;
-    }
-    ul{
-        display: flex;
-        column-gap: 32px;
-        li:last-of-type{
-            color: red;
-        }
-    }
 
-    p{
-        margin: 0;
-        color: #74798c;
-        font-size: 14px;
-    }
-}
 `
 
 
@@ -92,17 +74,8 @@ function Home() {
                 <h1>Bonjour <span className='name'>{firstName}</span></h1>
                 <p className='greetings'>Félicitation ! Vous avez explosé vos objectifs hier &#128079;</p>
                 <section>
-                    <div>
-                        <div style={{ height: "320px", backgroundColor: "#fbfbfb", padding: "24px 32px" }}>
-                            <div className='legend'>
-                                <h4>Activité quotidienne</h4>
-                                <ul >
-                                    <li><p>Poids(kg)</p></li>
-                                    <li><p>Calories brûlées(kCal)</p></li>
-                                </ul>
-                            </div>
-                            <Activity />
-                        </div>
+                    <div style={{ width: "74.16%" }}>
+                        <Activity />
                         <div className='graphContainer'>
                             <Session />
                             <Perfs />

@@ -1,11 +1,11 @@
-import { reformActivityData, reformPerfsData, reformSessionData, reformUserData } from "./formatData"
+import Model from "./formatData"
 import { successfullActivityCallApi } from '../Redux/Actions/activityActions'
 import { successfullUserCallApi } from '../Redux/Actions/mainDataAction'
 import { successfullPerfApiCall } from "../Redux/Actions/perfActions"
 import { successfullSessionApiCall } from "../Redux/Actions/sessionAction"
 import store from "../Redux/store"
 
-
+const model = new Model()
 export function initApi(id, url) {
     getMainDatas(id, url)
     getActivityDatas(id, url)
@@ -24,7 +24,7 @@ export async function getMainDatas(id, url) {
         if (response.ok) {
             const data = await response.json()
 
-            return store.dispatch(successfullUserCallApi(reformUserData(data.data)))
+            return store.dispatch(successfullUserCallApi(model.reformUserData(data.data)))
         }
     }
     catch (error) {
@@ -45,7 +45,7 @@ export async function getActivityDatas(id, url) {
         const response = await fetch(`${url}/${id}/activity`)
         if (response.ok) {
             const data = await response.json()
-            return store.dispatch(successfullActivityCallApi(reformActivityData(data.data)))
+            return store.dispatch(successfullActivityCallApi(model.reformActivityData(data.data)))
         }
 
     } catch (error) {
@@ -65,7 +65,7 @@ export async function getPerformancesDatas(id, url, endpoint) {
         const response = await fetch(`${url}/${id}/performance`)
         if (response.ok) {
             const data = await response.json()
-            return store.dispatch(successfullPerfApiCall(reformPerfsData(data.data)))
+            return store.dispatch(successfullPerfApiCall(model.reformPerfsData(data.data)))
         }
     } catch (error) {
         console.log(error)
@@ -84,7 +84,7 @@ export async function getSessionDatas(id, url) {
         const response = await fetch(`${url}/${id}/average-sessions`)
         if (response.ok) {
             const data = await response.json()
-            return store.dispatch(successfullSessionApiCall(reformSessionData(data.data)))
+            return store.dispatch(successfullSessionApiCall(model.reformSessionData(data.data)))
         }
     } catch (error) {
         console.log(error)

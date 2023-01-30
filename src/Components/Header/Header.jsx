@@ -9,6 +9,7 @@ const StyledHeader = styled.header`
     padding: 14px 28px;
     padding-right: 91px;
     justify-content: space-between;
+    width: 100%;
     img{
         width: 178px;
     }
