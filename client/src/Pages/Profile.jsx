@@ -17,10 +17,12 @@ import NutrimentCard from '../Components/NutrimentCard/NutrimentCard'
 
 const Container = styled.div`
 width: 100%;
-padding-left:224px;
-padding-top: 68px;
-padding-right: 90px;
+padding-left:15.55%;
+padding-top: 4.72%;
+padding-right: 6.25%;
 height: 100%;
+display: flex;
+flex-direction: column;
 .name{
     color: red;
 }
@@ -29,43 +31,50 @@ h1{
     font-weight: 500;
 }
 .greetings{
-    margin-top: 21px;
+    margin-top: 1.86%;
     font-size: 18px;
 }
 section{
     display: flex;
     width: 100%;
-    margin-top: 77px;
+    margin-top: 6.85%;
+    margin-top: clamp(30px,6.85%, 77px);
     column-gap: 31px;
+    justify-content: space-between;
 }
 .nutrimentsContainer{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    row-gap: 39px;
+    width: fit-content;
+    height: 100%;
+    justify-content: space-between;
     p{
         margin-top: 5px;
     }
 }
 .graphContainer{
     display:flex;
-    margin-top: 28px;
-    column-gap: 30px;
+    margin-top: 4.715%;
+    column-gap: 3.59%;
+    /* column-gap: clamp() */
     width: 100%;
 }
-
+.chartsContainer{
+    width: 74.16%;
+    /* width: clamp(500px,60vw, 1000px); */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 `
 
 
-function Home() {
+function Profile() {
     const userId = Number(useParams().id)
-    const test = useSelector(store => store)
     const { Nutriments } = useSelector(store => store.mainData.userDatas)
     const { firstName } = useSelector(store => store.mainData.userDatas)
     useEffect(() => {
-        // initApi(userId, 'http://localhost:3000/user')
         initMockApi(userId, '../src/mockedDatas')
-        console.log(test)
     }, [])
 
     return (
@@ -74,7 +83,7 @@ function Home() {
                 <h1>Bonjour <span className='name'>{firstName}</span></h1>
                 <p className='greetings'>Félicitation ! Vous avez explosé vos objectifs hier &#128079;</p>
                 <section>
-                    <div style={{ width: "74.16%" }}>
+                    <div className='chartsContainer'>
                         <Activity />
                         <div className='graphContainer'>
                             <Session />
@@ -91,4 +100,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Profile

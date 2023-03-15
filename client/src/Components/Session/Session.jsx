@@ -2,21 +2,25 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { LineChart, ResponsiveContainer, Tooltip, XAxis, Line, YAxis, Rectangle } from 'recharts'
 import styled from 'styled-components'
-
+import PropTypes from "prop-types"
 const SessionContainer = styled.div`
-    width: 258px;
-    height: 263px;
+    /* width: 258px;
+    height: 263px; */
+    width: 17.91vw;
+    height: 25.68vh;
     position: relative;
     background-color: #ff0000;
     border-radius: 5px;
     .title{
         position: absolute;
-        top: 29px;
-        left: 34px;
+        top: 0;
+        left: 0;
         font-size: 15px;
-        width: 60%;
+        width: 80%;
         line-height: 1.5;
-        color: rgb(255,255,255, 0.50)
+        color: rgb(255,255,255, 0.50);
+        padding-top: 11%;
+        padding-left: 13%
     }
 `
 const CustomizedTooltip = styled.div`
@@ -62,6 +66,10 @@ const CustomTooltip = ({ active, payload }) => {
     }
 }
 
+CustomTooltip.propTypes = {
+    active: PropTypes.bool,
+    payload: PropTypes.array
+}
 const CustomCursor = ({ points }) => {
     return <Rectangle
         fill='black'
@@ -71,7 +79,8 @@ const CustomCursor = ({ points }) => {
         x={points[1].x}
     />
 }
+CustomCursor.propTypes = {
+    points: PropTypes.array
+}
 
 export default Session
-
-// margin={{ left: 20, right: 20 }}

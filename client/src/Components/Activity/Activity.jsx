@@ -6,8 +6,9 @@ import styled from 'styled-components';
 const ActivityContainer = styled.div`
 height: 31.25vh;
 background-color: #fbfbfb;
-padding: 24px 32px;
+padding: clamp(14px, 2.35vh, 32px) clamp(24px,2.36vw ,40px);
 /* width: 57.98%; */
+/* width: 100%; */
 .activityLegend{
     display: flex;
     justify-content: space-between;

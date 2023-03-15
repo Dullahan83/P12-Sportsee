@@ -17,10 +17,10 @@ export default class Model {
     reformPerfsData(datas) {
         const data = []
         const frenchType = ["Intensité", "Vitesse", "Force", "Endurance", "Energie", "Cardio"]
-        datas.data.map((el, index) => {
+        datas.data.reverse().map((el, index) => {
             const obj = {
                 "subject": frenchType[index],
-                "value": +el.value
+                "value": Number(el.value)
             }
             data.push(obj)
         })
@@ -49,7 +49,7 @@ export default class Model {
             scoreRef: [{ score: 100, fill: "#fff" }, { score: score * 100 }],
             Nutriments: [
                 {
-                    kind: "Calories", value: `${calorieCount}g`
+                    kind: "Calories", value: `${new Intl.NumberFormat('en-US').format(calorieCount)}kCal`
                 }, { kind: "Proteines", value: `${proteinCount}g` },
                 { kind: "Glucides", value: `${carbohydrateCount}g` },
                 { kind: "Lipides", value: `${lipidCount}g` }

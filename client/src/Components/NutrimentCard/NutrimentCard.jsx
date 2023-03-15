@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import PropTypes from "prop-types"
 const Card = styled.div`
-    padding: 32px;
+    padding: clamp(18px,14.35%, 32px);
     background-color: #fbfbfb;
     display: flex;
     align-items: center;
@@ -12,10 +12,10 @@ const Card = styled.div`
         margin-left: 15%;
     }
     img{
-        width: 60px
+        width: clamp(35px, 37.318%, 60px)
     }
     h2{
-        font-size: 24px;
+        font-size: clamp(14px,1.66vw,24px);
     }
 `
 
@@ -31,4 +31,8 @@ function NutrimentCard({ count, title }) {
     )
 }
 
+NutrimentCard.propTypes = {
+    count: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
+}
 export default NutrimentCard
