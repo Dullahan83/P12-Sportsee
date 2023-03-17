@@ -13,6 +13,7 @@ const StyledHeader = styled.header`
     width: 100%;
     img{
         width: 178px;
+        z-index: 1;
     }
     nav{
         width: 75.25%;

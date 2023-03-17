@@ -5,14 +5,9 @@ import styled from 'styled-components'
 
 
 const ScoreContainer = styled.div`
-/* width: 258px;
-height: 263px; */
-/* width: 17.91vw;
-height: 25.68vh; */
 width: 30.95%;
 aspect-ratio: 0.98;
 background-color: #fbfbfb;
-/* background-color: blue; */
 border-radius: 5px;
 position: relative;
 .title{
@@ -53,9 +48,6 @@ function Score() {
     const test = useSelector(store => store)
     const datas = useSelector(store => store.mainData.userDatas.scoreRef)
     const { score } = useSelector(store => store.mainData.userDatas)
-    console.log(datas)
-    console.log(score)
-    const colors = ["#ff0000", "#fff"]
     return (
         <ScoreContainer>
             <div className='title'>Score</div>
@@ -79,12 +71,7 @@ function Score() {
                         cornerRadius="50%"
                     />
                 </RadialBarChart>
-                {/* <PieChart >
-                    <Pie isAnimationActive={false} data={datas} dataKey="value" innerRadius={65} startAngle={90} endAngle={450}>{datas && datas.map((entry, index) => (
-                        <Cell cornerRadius={100} key={`cell-${index}`} fill={colors[index % colors.length]} />
-                    ))}</Pie>
-                    <Pie data={datas} dataKey="value" outerRadius={65} fill="#fff" />
-                </PieChart> */}
+
             </ResponsiveContainer>
         </ScoreContainer>
     )

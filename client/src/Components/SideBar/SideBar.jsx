@@ -15,9 +15,9 @@ const Sidebar = styled.div`
     justify-content: space-between;
     position: absolute;
     height: 100%;
+    min-height: 100vh;
     left: 0;
     top: 0;
-    z-index: -1;
     ul{
         gap: 20px;
         display: flex;
