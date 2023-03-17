@@ -46,8 +46,7 @@ section{
     display: flex;
     flex-direction: column;
     width: fit-content;
-    height: 100%;
-    row-gap: 7.4%;
+    justify-content: space-between;
     p{
         margin-top: 5px;
     }

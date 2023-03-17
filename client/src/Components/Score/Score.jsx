@@ -12,6 +12,7 @@ height: 25.68vh; */
 width: 30.95%;
 aspect-ratio: 0.98;
 background-color: #fbfbfb;
+/* background-color: blue; */
 border-radius: 5px;
 position: relative;
 .title{
@@ -52,7 +53,9 @@ function Score() {
     const test = useSelector(store => store)
     const datas = useSelector(store => store.mainData.userDatas.scoreRef)
     const { score } = useSelector(store => store.mainData.userDatas)
-    console.log(typeof score)
+    console.log(datas)
+    console.log(score)
+    const colors = ["#ff0000", "#fff"]
     return (
         <ScoreContainer>
             <div className='title'>Score</div>
@@ -66,16 +69,22 @@ function Score() {
                     cy={"50%"}
                     innerRadius={"60%"}
                     outerRadius={"90%"}
-                    barSize={10}
+                    barSize={"9%"}
                     startAngle={90} data={datas}
                     endAngle={450}
-                    barGap={40}
+                    barGap={0}
                 >
                     <RadialBar dataKey="score"
                         fill="#FF0000"
                         cornerRadius="50%"
                     />
                 </RadialBarChart>
+                {/* <PieChart >
+                    <Pie isAnimationActive={false} data={datas} dataKey="value" innerRadius={65} startAngle={90} endAngle={450}>{datas && datas.map((entry, index) => (
+                        <Cell cornerRadius={100} key={`cell-${index}`} fill={colors[index % colors.length]} />
+                    ))}</Pie>
+                    <Pie data={datas} dataKey="value" outerRadius={65} fill="#fff" />
+                </PieChart> */}
             </ResponsiveContainer>
         </ScoreContainer>
     )

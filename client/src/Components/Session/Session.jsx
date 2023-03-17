@@ -4,8 +4,8 @@ import { LineChart, ResponsiveContainer, Tooltip, XAxis, Line, YAxis, Rectangle 
 import styled from 'styled-components'
 import PropTypes from "prop-types"
 const SessionContainer = styled.div`
-    /* width: 258px;
-    height: 263px; */
+    /* width: 258px; */
+    /* height: 263px; */
     /* width: 17.91vw;
     height: 25.68vh; */
     width: 30.95%;

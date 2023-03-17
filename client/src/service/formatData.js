@@ -46,6 +46,7 @@ export default class Model {
             lastName,
             age,
             score,
+            // scoreRef: [{ name: "scoreRef", value: 100 - (score * 100) }, { name: "score", value: score * 100 }],
             scoreRef: [{ score: 100, fill: "#fff" }, { score: score * 100 }],
             Nutriments: [
                 {
