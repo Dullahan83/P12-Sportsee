@@ -15,7 +15,7 @@ const Card = styled.div`
         width: clamp(35px, 37.318%, 60px)
     }
     h2{
-        font-size: clamp(14px,1.66vw,24px);
+        font-size: clamp(14px,1.5vw,24px);
     }
 `
 

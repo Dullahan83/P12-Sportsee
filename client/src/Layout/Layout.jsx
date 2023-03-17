@@ -9,6 +9,7 @@ const Main = styled.main`
     flex-direction: column;
     width: 100%;
     height: 100%;
+    position: relative;
     &>div{
         height: 100%;
     }

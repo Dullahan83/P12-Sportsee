@@ -4,11 +4,9 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContaine
 import styled from 'styled-components';
 
 const ActivityContainer = styled.div`
-height: 31.25vh;
+height:51.5%;
 background-color: #fbfbfb;
 padding: clamp(14px, 2.35vh, 32px) clamp(24px,2.36vw ,40px);
-/* width: 57.98%; */
-/* width: 100%; */
 .activityLegend{
     display: flex;
     justify-content: space-between;
@@ -48,7 +46,7 @@ function Activity() {
     const datas = useSelector(store => store.activity.activityDatas)
 
     return (
-        <ActivityContainer>
+        datas && <ActivityContainer>
             <div className='activityLegend'>
                 <h4>Activité quotidienne</h4>
                 <ul >

@@ -14,7 +14,7 @@ const Sidebar = styled.div`
     align-items: center;
     justify-content: space-between;
     position: absolute;
-    height: 100vh;
+    height: 100%;
     left: 0;
     top: 0;
     z-index: -1;

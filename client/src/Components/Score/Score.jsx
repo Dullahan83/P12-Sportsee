@@ -25,7 +25,7 @@ position: relative;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #fff;
-    width: 66.5%;
+    width: 66%;
     aspect-ratio: 1;
     display: flex;
     align-items: center;
@@ -50,11 +50,12 @@ function Score() {
     const test = useSelector(store => store)
     const datas = useSelector(store => store.mainData.userDatas.scoreRef)
     const { score } = useSelector(store => store.mainData.userDatas)
+    console.log(typeof score)
     return (
         <ScoreContainer>
             <div className='title'>Score</div>
             <div className='scoreLegend'>
-                <span>{score * 100}%</span>
+                <span>{score && `${score * 100}%`}</span>
                 <p>de votre objectif</p>
             </div>
             <ResponsiveContainer width="100%" height="100%">
@@ -63,7 +64,7 @@ function Score() {
                     cy={"50%"}
                     innerRadius={"60%"}
                     outerRadius={"90%"}
-                    barSize={"9%"}
+                    barSize={10}
                     startAngle={90} data={datas}
                     endAngle={450}
                     barGap={40}

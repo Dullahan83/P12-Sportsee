@@ -47,7 +47,7 @@ section{
     flex-direction: column;
     width: fit-content;
     height: 100%;
-    justify-content: space-between;
+    row-gap: 7.4%;
     p{
         margin-top: 5px;
     }
@@ -61,7 +61,6 @@ section{
 }
 .chartsContainer{
     width: 74.16%;
-    /* width: clamp(500px,60vw, 1000px); */
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -91,8 +90,8 @@ function Profile() {
                             <Score />
                         </div>
                     </div>
-                    <div className='nutrimentsContainer'>{Nutriments && Nutriments.map((data, key) => {
-                        return <NutrimentCard key={key} title={data.kind} count={data.value} />
+                    <div className='nutrimentsContainer'>{Nutriments && Nutriments.map((data, index) => {
+                        return <NutrimentCard key={index} title={data.kind} count={data.value} />
                     })}</div>
                 </section>
             </Container>
