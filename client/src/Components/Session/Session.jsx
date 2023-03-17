@@ -6,8 +6,10 @@ import PropTypes from "prop-types"
 const SessionContainer = styled.div`
     /* width: 258px;
     height: 263px; */
-    width: 17.91vw;
-    height: 25.68vh;
+    /* width: 17.91vw;
+    height: 25.68vh; */
+    width: 30.95%;
+aspect-ratio: 0.98;
     position: relative;
     background-color: #ff0000;
     border-radius: 5px;

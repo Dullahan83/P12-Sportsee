@@ -7,8 +7,10 @@ import styled from 'styled-components'
 const ScoreContainer = styled.div`
 /* width: 258px;
 height: 263px; */
-width: 17.91vw;
-height: 25.68vh;
+/* width: 17.91vw;
+height: 25.68vh; */
+width: 30.95%;
+aspect-ratio: 0.98;
 background-color: #fbfbfb;
 border-radius: 5px;
 position: relative;
